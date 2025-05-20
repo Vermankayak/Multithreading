@@ -9,7 +9,7 @@ import java.util.concurrent.Future;
 
 class ExecutorDemo3 {
   
-    static ExecutorService threadPool = Executors.newFixedThreadPool(2);
+    static ExecutorService threadPool = Executors.newSingleThreadExecutor();
   
     public static void main( String args[] ) throws Exception {
         System.out.println(pollingStatusAndCancelTask(10));
