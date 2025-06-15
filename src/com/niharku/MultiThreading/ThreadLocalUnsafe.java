@@ -2,7 +2,7 @@ package com.niharku.MultiThreading;
 
 import java.util.Random;
 
-public class DemoThreadUnsafe {
+public class ThreadLocalUnsafe {
 
     // We'll use this to randomly sleep our threads
     static Random random = new Random(System.currentTimeMillis());
@@ -19,7 +19,7 @@ public class DemoThreadUnsafe {
             public void run() {
                 for (int i = 0; i < 100; i++) {
                     badCounter.increment();
-                    DemoThreadUnsafe.sleepRandomlyForLessThan10Secs();
+                    ThreadLocalUnsafe.sleepRandomlyForLessThan10Secs();
                 }
             }
         });
@@ -31,7 +31,7 @@ public class DemoThreadUnsafe {
             public void run() {
                 for (int i = 0; i < 100; i++) {
                     badCounter.decrement();
-                    DemoThreadUnsafe.sleepRandomlyForLessThan10Secs();
+                    ThreadLocalUnsafe.sleepRandomlyForLessThan10Secs();
                 }
             }
         });
